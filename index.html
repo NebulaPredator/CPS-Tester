@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Speed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff4d4d);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #ff758c;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            background: #ff7eb3;
+        }
+
+        #clickCount {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .instructions {
+            font-size: 1.1em;
+            margin: 15px 0;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click Speed Test</h1>
+        <p class="instructions">Press "Start Test" to begin, then click "Click Me" as fast as you can for 5 seconds!</p>
+        <button id="startButton">Start Test</button>
+        <button id="clickButton">Click Me!</button>
+        <p id="clickCount">Your clicks will appear here.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
