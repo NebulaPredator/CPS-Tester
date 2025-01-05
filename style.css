@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: #ecf0f1;
+    font-family: 'Press Start 2P', monospace;
+    background: #000;
+    color: #00ff00;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,57 +14,63 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
 .instructions {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 2rem;
-    color: #bdc3c7;
+    color: #00ff00;
+    opacity: 0.8;
 }
 
 button {
-    font-size: 1.2rem;
-    padding: 15px 30px;
+    font-size: 1rem;
+    padding: 10px 20px;
     margin: 10px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(45deg, #1abc9c, #16a085);
-    color: #ecf0f1;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background: #000;
+    color: #00ff00;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
     transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-    background: linear-gradient(45deg, #16a085, #1abc9c);
+    background: #003300;
     transform: scale(1.1);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
 }
 
 button:active {
     transform: scale(1.05);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    background: #001a00;
+    box-shadow: inset 0 0 10px #00ff00, inset 0 0 20px #00ff00;
 }
 
 button:disabled {
-    background: linear-gradient(45deg, #7f8c8d, #95a5a6);
-    cursor: not-allowed;
+    background: #333;
+    border-color: #555;
+    color: #777;
     box-shadow: none;
+    cursor: not-allowed;
 }
 
 #clickCount {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 1rem;
-    color: #ecf0f1;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
 .container {
     text-align: center;
     padding: 20px;
-    background: rgba(44, 62, 80, 0.85);
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
 }
