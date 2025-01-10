@@ -9,8 +9,8 @@
 
         body {
             font-family: 'Press Start 2P', monospace;
-            background: #000;
-            color: #00ff00;
+            background: linear-gradient(135deg, #000, #004d00);
+            color: #00ff99;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,37 +21,38 @@
         }
 
         h1 {
-            font-size: 2rem;
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #00ff99, 0 0 30px #00ff99, 0 0 60px #00ff99;
             margin-bottom: 20px;
             text-align: center;
         }
 
         button {
-            font-size: 1rem;
-            padding: 10px 20px;
+            font-size: 1.2rem;
+            padding: 15px 30px;
             margin: 10px;
-            border: 2px solid #00ff00;
-            border-radius: 5px;
-            background: #000;
-            color: #00ff00;
+            border: 2px solid #00ff99;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ff99;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #00ff99, 0 0 30px #00ff99;
         }
 
         button:hover {
-            background: #003300;
+            background: linear-gradient(135deg, #004d00, #007f4f);
             transform: scale(1.1);
+            box-shadow: 0 0 20px #00ff99, 0 0 50px #00ff99;
         }
 
         button:active {
-            background: #001a00;
-            box-shadow: inset 0 0 10px #00ff00, inset 0 0 20px #00ff00;
+            background: #00261a;
+            box-shadow: inset 0 0 10px #00ff99, inset 0 0 30px #00ff99;
         }
 
         button:disabled {
-            background: #333;
+            background: #1a1a1a;
             border-color: #555;
             color: #777;
             box-shadow: none;
@@ -59,24 +60,35 @@
         }
 
         #clickCount {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-top: 20px;
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+            animation: glow 2s infinite;
         }
 
         .container {
             text-align: center;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.1);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+            padding: 30px;
+            background: rgba(0, 255, 153, 0.1);
+            border: 2px solid #00ff99;
+            border-radius: 15px;
+            box-shadow: 0 0 30px #00ff99, 0 0 50px #00ff99;
         }
 
         .instructions {
-            font-size: 0.9rem;
-            margin: 15px 0;
-            opacity: 0.9;
+            font-size: 1rem;
+            margin: 20px 0;
+            color: #ccffcc;
+            opacity: 0.8;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+            }
+            50% {
+                text-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99;
+            }
         }
     </style>
 </head>
@@ -85,9 +97,34 @@
         <h1>Click Speed Test</h1>
         <p class="instructions">Press "Start Test" to begin, then click "Click Me" as fast as you can for 5 seconds!</p>
         <button id="startButton">Start Test</button>
-        <button id="clickButton">Click Me!</button>
+        <button id="clickButton" disabled>Click Me!</button>
         <p id="clickCount">Your clicks will appear here.</p>
     </div>
-    <script src="script.js"></script>
+    <script>
+        const startButton = document.getElementById('startButton');
+        const clickButton = document.getElementById('clickButton');
+        const clickCount = document.getElementById('clickCount');
+
+        let clicks = 0;
+        let timer;
+
+        startButton.addEventListener('click', () => {
+            clicks = 0;
+            clickCount.textContent = "Click as fast as you can!";
+            clickButton.disabled = false;
+            startButton.disabled = true;
+
+            timer = setTimeout(() => {
+                clickButton.disabled = true;
+                startButton.disabled = false;
+                clickCount.textContent = `You clicked ${clicks} times!`;
+            }, 5000);
+        });
+
+        clickButton.addEventListener('click', () => {
+            clicks++;
+            clickCount.textContent = `Clicks: ${clicks}`;
+        });
+    </script>
 </body>
 </html>
