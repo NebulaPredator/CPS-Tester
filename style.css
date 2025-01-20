@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 body {
-    font-family: 'Press Start 2P', monospace;
-    background: linear-gradient(135deg, #000, #004d00);
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, #001a00, #003300, #004d00);
     color: #00ff99;
     display: flex;
     flex-direction: column;
@@ -11,18 +11,19 @@ body {
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
+    cursor: url('https://cdn.jsdelivr.net/gh/kvngvikram/custom-cursors@main/green-pointer.cur'), auto;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 10px #00ff99, 0 0 30px #00ff99, 0 0 60px #00ff99;
+    text-shadow: 0 0 15px #00ff99, 0 0 45px #00ff99;
 }
 
 .instructions {
     font-size: 1rem;
     margin-bottom: 2rem;
-    color: #ccffcc;
+    color: rgba(204, 255, 204, 0.9);
     opacity: 0.8;
 }
 
@@ -34,29 +35,29 @@ button {
     border-radius: 8px;
     background: rgba(0, 0, 0, 0.8);
     color: #00ff99;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00ff99, 0 0 30px #00ff99;
-    transition: all 0.3s ease-in-out;
+    cursor: url('https://cdn.jsdelivr.net/gh/kvngvikram/custom-cursors@main/green-click.cur'), pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.4), 0 0 30px rgba(0, 255, 153, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
     background: linear-gradient(135deg, #004d00, #007f4f);
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00ff99, 0 0 50px #00ff99;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.6), 0 0 50px rgba(0, 255, 153, 0.3);
 }
 
 button:active {
-    transform: scale(1.05);
-    background: #00261a;
+    transform: scale(1);
+    background: #003300;
     box-shadow: inset 0 0 10px #00ff99, inset 0 0 30px #00ff99;
 }
 
 button:disabled {
-    background: #1a1a1a;
+    background: rgba(50, 50, 50, 0.8);
     border-color: #555;
     color: #777;
-    box-shadow: none;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 #clickCount {
@@ -64,19 +65,21 @@ button:disabled {
     margin-top: 1rem;
     color: #00ff99;
     text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-    animation: glow 2s infinite;
+    animation: pulse 2s infinite;
 }
 
 .container {
     text-align: center;
     padding: 30px;
-    background: rgba(0, 255, 153, 0.1);
-    border: 2px solid #00ff99;
+    background: rgba(0, 255, 153, 0.05);
+    border: 2px solid rgba(0, 255, 153, 0.5);
     border-radius: 15px;
-    box-shadow: 0 0 30px #00ff99, 0 0 50px #00ff99;
+    box-shadow: 0 0 30px rgba(0, 255, 153, 0.3), 0 0 50px rgba(0, 255, 153, 0.5);
+    max-width: 400px;
+    width: 90%;
 }
 
-@keyframes glow {
+@keyframes pulse {
     0%, 100% {
         text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
     }
